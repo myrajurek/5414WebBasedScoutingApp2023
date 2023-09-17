@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--TODO: fix radio buttons to be dropdowns *ew*
+                -lines 40-62,104-112, 152-174 
+          make checkboxes buttons 
+                lines 39, 67-69, 149-151, 156-188, 328-329, 337-338, 
+                346-347, 355-356, 364-365, 188-192, 173-174, 382-389 
+          make big titles not ugly asf
+                lines 31,37, 71, 123, 159 
+          make reg titles fancy
+                lines almost every other one in cont
+          make comments fancy
+                line 202
+          make + - css nice
+                lines 80-115, 128-157, 203-208
+          make buttons look nice
+                lines 114, 119
+              -->
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./Logo.jpg">
+  <link rel="stylesheet" href="./style.css">
   <title>5414 Scout App</title>
 </head>
 
-<body id="webfulscrn" onclick="openFullscreen();" onload="openFullscreen();" onpageshow="openFullscreen();"
+<body> <!-- dissabled for css editing id="webfulscrn" onclick="openFullscreen();" onload="openFullscreen();" onpageshow="openFullscreen();"
      onmouseover="openFullscreen(); " oncontextmenu="openFullscreen();" onscroll="openFullscreen();" 
-     onoffline="openFullscreen();" onoffline="openFullscreen();" >
+     onoffline="openFullscreen();"> -->
 
   <p id="fullBTN">&#x26F6</p>
 
@@ -23,178 +41,178 @@
   <div class="container">
     <div class="input-form">
       <p class="preMatchTitle">Pre-Match</p>
-      <label>Scouter Name</label>
-      <input type="text" class="scouterName" placeholder="Scouter Name">
-      <label>Team #</label>
-      <input type="number" class="teamNum" placeholder="Team #">
-      <label>Match #</label>
-      <input type="number" class="matchNum" placeholder="Match #">
-      <label for="noShow">No Show</label>
-      <input type="checkbox" id="noShow" class="noShow">
-      <div id="noShowToggle">
-        <form class="radio" id="startPos">
-          <p class="radioTitle">Start Position</p>
-          <div class="radioInput">
-            <label class="radioLabel" for="StartPos1">1</label>
-            <input type="radio" name="startPos" value="1">
-            <label class="radioLabel" for="StartPos2">2</label>
-            <input type="radio" name="startPos" value="2">
-            <label class="radioLabel" for="StartPos3">3</label>
-            <input type="radio" name="startPos" value="3">
-            <label class="radioLabel" for="StartPos4">4</label>
-            <input type="radio" name="startPos" value="4">
-          </div>
-        </form>
-        <form class="radio" id="preLoad">
-          <p class="radioTitle">Pre-Load</p>
-          <div class="radioInput">
-            <label class="radioLabel" for="preLoadCone">Cone</label>
-            <input type="radio" name="preLoad" id="preLoadCone" value="Cone">
-            <label class="radioLabel" for="preLoadCube">Cube</label>
-            <input type="radio" name="preLoad" id="preLoadCube" value="Cube">
-            <label class="radioLabel" for="preLoadNone">None</label>
-            <input type="radio" name="preLoad" id="preLoadNone" value="None">
-          </div>
-        </form>
-        <p class="autonomousTitle">Autonomous</p>
-        <label for="preLoadScored">Pre-Load Scored</label>
-        <input name="preLoadScored" id="preLoadScored" class="preLoadScored" type="checkbox">
-        <label for="leftCommunity">Left Community</label>
-        <input name="leftCommunity" class="leftCommunity" type="checkbox">
-        <p class="numStepTitle">Extra Pieces Picked Up</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusEPPU" id="numStepMinus">&minus;</span>
-          <span class="numStepNumEPPU" id="numStepNum">0</span>
-          <span class="numStepPlusEPPU" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">High Cone</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusAHC" id="numStepMinus">&minus;</span>
-          <span class="numStepNumAHC" id="numStepNum">0</span>
-          <span class="numStepPlusAHC" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">High Cube</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusAHCU" id="numStepMinus">&minus;</span>
-          <span class="numStepNumAHCU" id="numStepNum">0</span>
-          <span class="numStepPlusAHCU" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">Mid Cone</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusAMC" id="numStepMinus">&minus;</span>
-          <span class="numStepNumAMC" id="numStepNum">0</span>
-          <span class="numStepPlusAMC" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">Mid Cube</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusAMCU" id="numStepMinus">&minus;</span>
-          <span class="numStepNumAMCU" id="numStepNum">0</span>
-          <span class="numStepPlusAMCU" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">Hybrid</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusAH" id="numStepMinus">&minus;</span>
-          <span class="numStepNumAH" id="numStepNum">0</span>
-          <span class="numStepPlusAH" id="numStepPlus">+</span>
-        </div>
-        <form class="radio">
-          <p class="radioTitle">Autonomous Charge Station</p>
-          <div class="radioInput">
-            <label class="radioLabel" for="preLoadCone">Docked</label>
-            <input type="radio" name="autoChargeStation" value="Docked">
-            <label class="radioLabel" for="preLoadCube">Engaged</label>
-            <input type="radio" name="autoChargeStation" value="Engaged">
-            <label class="radioLabel" for="preLoadNone">None</label>
-            <input type="radio" name="autoChargeStation" value="none">
-          </div>
-        </form>
+            <label>Scouter Name</label>
+                <input type="text" class="scouterName" placeholder="Scouter Name">
+            <label>Team #</label>
+                <input type="number" class="teamNum" placeholder="Team #">
+            <label>Match #</label>
+                <input type="number" class="matchNum" placeholder="Match #">
+            <label for="noShow">No Show</label>
+                <input type="checkbox" id="noShow" class="noShow">
+                <div id="noShowToggle">
+                <form class="radio" id="startPos">
+            <p class="radioTitle">Start Position</p>
+                  <div class="radioInput">
+                    <label class="radioLabel" for="StartPos1">1</label>
+                    <input type="radio" name="startPos" value="1">
+                    <label class="radioLabel" for="StartPos2">2</label>
+                    <input type="radio" name="startPos" value="2">
+                    <label class="radioLabel" for="StartPos3">3</label>
+                    <input type="radio" name="startPos" value="3">
+                    <label class="radioLabel" for="StartPos4">4</label>
+                    <input type="radio" name="startPos" value="4">
+                  </div>
+                </form>
+                <form class="radio" id="preLoad">
+            <p class="radioTitle">Pre-Load</p>
+                  <div class="radioInput">
+                    <label class="radioLabel" for="preLoadCone">Cone</label>
+                    <input type="radio" name="preLoad" id="preLoadCone" value="Cone">
+                    <label class="radioLabel" for="preLoadCube">Cube</label>
+                    <input type="radio" name="preLoad" id="preLoadCube" value="Cube">
+                    <label class="radioLabel" for="preLoadNone">None</label>
+                    <input type="radio" name="preLoad" id="preLoadNone" value="None">
+                  </div>
+                </form>
+      <p class="autonomousTitle">Autonomous</p>
+              <label for="preLoadScored">Pre-Load Scored</label>
+                <input name="preLoadScored" id="preLoadScored" class="preLoadScored" type="checkbox">
+              <label for="leftCommunity">Left Community</label>
+                <input name="leftCommunity" class="leftCommunity" type="checkbox">
+              <p class="numStepTitle">Extra Pieces Picked Up</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusEPPU" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumEPPU" id="numStepNum">0</span>
+                  <span class="numStepPlusEPPU" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">High Cone</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusAHC" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumAHC" id="numStepNum">0</span>
+                  <span class="numStepPlusAHC" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">High Cube</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusAHCU" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumAHCU" id="numStepNum">0</span>
+                  <span class="numStepPlusAHCU" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">Mid Cone</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusAMC" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumAMC" id="numStepNum">0</span>
+                  <span class="numStepPlusAMC" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">Mid Cube</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusAMCU" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumAMCU" id="numStepNum">0</span>
+                  <span class="numStepPlusAMCU" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">Hybrid</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusAH" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumAH" id="numStepNum">0</span>
+                  <span class="numStepPlusAH" id="numStepPlus">+</span>
+                </div>
+                <form class="radio">
+              <p class="radioTitle">Autonomous Charge Station</p>
+                  <div class="radioInput">
+                    <label class="radioLabel" for="preLoadCone">Docked</label>
+                    <input type="radio" name="autoChargeStation" value="Docked">
+                    <label class="radioLabel" for="preLoadCube">Engaged</label>
+                    <input type="radio" name="autoChargeStation" value="Engaged">
+                    <label class="radioLabel" for="preLoadNone">None</label>
+                    <input type="radio" name="autoChargeStation" value="none">
+                  </div>
+                </form>
         <p class="teleOpTitle">Tele-Op</p>
-        <p class="numStepTitle">High Cone</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusTHC" id="numStepMinus">&minus;</span>
-          <span class="numStepNumTHC" id="numStepNum">0</span>
-          <span class="numStepPlusTHC" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">High Cube</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusTHCU" id="numStepMinus">&minus;</span>
-          <span class="numStepNumTHCU" id="numStepNum">0</span>
-          <span class="numStepPlusTHCU" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">Mid Cone</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusTMC" id="numStepMinus">&minus;</span>
-          <span class="numStepNumTMC" id="numStepNum">0</span>
-          <span class="numStepPlusTMC" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">Mid Cube</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusTMCU" id="numStepMinus">&minus;</span>
-          <span class="numStepNumTMCU" id="numStepNum">0</span>
-          <span class="numStepPlusTMCU" id="numStepPlus">+</span>
-        </div>
-        <p class="numStepTitle">Hybrid</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusTH" id="numStepMinus">&minus;</span>
-          <span class="numStepNumTH" id="numStepNum">0</span>
-          <span class="numStepPlusTH" id="numStepPlus">+</span>
-        </div>
-        <label for="conePickup" class="conePickUpLabel">Cone Pickup</label>
-        <input name="conePickup" id="cubePickUp" class="conePickUp" type="checkbox">
-        <label for="cubePickup">Cube Pickup</label>
-        <input name="cubePickup" id="cubePickUp" class="cubePickUp" type="checkbox">
-      </div>
+              <p class="numStepTitle">High Cone</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusTHC" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumTHC" id="numStepNum">0</span>
+                  <span class="numStepPlusTHC" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">High Cube</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusTHCU" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumTHCU" id="numStepNum">0</span>
+                  <span class="numStepPlusTHCU" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">Mid Cone</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusTMC" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumTMC" id="numStepNum">0</span>
+                  <span class="numStepPlusTMC" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">Mid Cube</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusTMCU" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumTMCU" id="numStepNum">0</span>
+                  <span class="numStepPlusTMCU" id="numStepPlus">+</span>
+                </div>
+              <p class="numStepTitle">Hybrid</p>
+                <div class="numStep" id="numStep">
+                  <span class="numStepMinusTH" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumTH" id="numStepNum">0</span>
+                  <span class="numStepPlusTH" id="numStepPlus">+</span>
+                </div>
+              <label for="conePickup" class="conePickUpLabel">Cone Pickup</label>
+                  <input name="conePickup" id="cubePickUp" class="conePickUp" type="checkbox">
+              <label for="cubePickup">Cube Pickup</label>
+                  <input name="cubePickup" id="cubePickUp" class="cubePickUp" type="checkbox">
+                </div>
       <p class="postMatchTitle">Post Match</p>
-      <form class="radio" id="preLoad">
-        <p class="radioTitle">Charge Station</p>
-        <div class="radioInput">
-          <label class="radioLabel" for="preLoadCone">Docked</label>
-          <input type="radio" name="endLoc" value="Docked">
-          <label class="radioLabel" for="preLoadCube">Engaged</label>
-          <input type="radio" name="endLoc" value="Engaged">
-          <label class="radioLabel" for="preLoadNone">None</label>
-          <input type="radio" name="endLoc" value="none">
-        </div>
-      </form>
-      <form class="radio" id="preLoad">
-        <p class="radioTitle">Driver Skill</p>
-        <div class="radioInput">
-          <label class="radioLabel" for="preLoadCone">Bad</label>
-          <input type="radio" name="driverSkill" id="preLoadCone" value="Bad">
-          <label class="radioLabel" for="preLoadCube">Average</label>
-          <input type="radio" name="driverSkill" id="preLoadCube" value="Avg">
-          <label class="radioLabel" for="preLoadNone">Good</label>
-          <input type="radio" name="driverSkill" id="preLoadNone" value="Good">
-        </div>
-      </form>
-      <form class="radio" id="preLoad">
-        <p class="radioTitle">Defense</p>
-        <div class="radioInput">
-          <label class="radioLabel" for="preLoadCone">Bad</label>
-          <input type="radio" name="defense" value="Bad">
-          <label class="radioLabel" for="preLoadCube">Average</label>
-          <input type="radio" name="defense" value="Avg">
-          <label class="radioLabel" for="preLoadNone">Good</label>
-          <input type="radio" name="defense" value="Good">
-        </div>
-      </form>
-      <label for="diedComms">Died/Lost Comms</label>
-      <input name="diedComms" class="diedComms" type="checkbox">
-      <label for="tipOver">Tipped Over</label>
-      <input name="tipOver" class="tipOver" type="checkbox">
-      <label for="redYellowCard">Yellow/Red Cards</label>
-      <input name="redYellowCard" class="redYellowCard" type="checkbox">
-      <p class="numStepTitle">Links Scored</p>
-      <div class="numStep" id="numStep">
-        <span class="numStepMinusLinks" id="numStepMinus">&minus;</span>
-        <span class="numStepNumLinks" id="numStepNum">00</span>
-        <span class="numStepPlusLinks" id="numStepPlus">+</span>
-      </div>
-      <div id="comments">
-        <a><label for="comments">Comments</label></a>
-        <input class="comments" id="comments" name="comments" type="text"
-          placeholder="Comment anything that you may think is important!">
-      </div>
+                <form class="radio" id="preLoad">
+              <p class="radioTitle">Charge Station</p>
+                  <div class="radioInput">
+                    <label class="radioLabel" for="preLoadCone">Docked</label>
+                    <input type="radio" name="endLoc" value="Docked">
+                    <label class="radioLabel" for="preLoadCube">Engaged</label>
+                    <input type="radio" name="endLoc" value="Engaged">
+                    <label class="radioLabel" for="preLoadNone">None</label>
+                    <input type="radio" name="endLoc" value="none">
+                  </div>
+                  </form>
+                  <form class="radio" id="preLoad">
+              <p class="radioTitle">Driver Skill</p>
+                  <div class="radioInput">
+                    <label class="radioLabel" for="preLoadCone">Bad</label>
+                    <input type="radio" name="driverSkill" id="preLoadCone" value="Bad">
+                    <label class="radioLabel" for="preLoadCube">Average</label>
+                    <input type="radio" name="driverSkill" id="preLoadCube" value="Avg">
+                    <label class="radioLabel" for="preLoadNone">Good</label>
+                    <input type="radio" name="driverSkill" id="preLoadNone" value="Good">
+                  </div>
+                  </form>
+                  <form class="radio" id="preLoad">
+              <p class="radioTitle">Defense</p>
+                  <div class="radioInput">
+                    <label class="radioLabel" for="preLoadCone">Bad</label>
+                    <input type="radio" name="defense" value="Bad">
+                    <label class="radioLabel" for="preLoadCube">Average</label>
+                    <input type="radio" name="defense" value="Avg">
+                    <label class="radioLabel" for="preLoadNone">Good</label>
+                    <input type="radio" name="defense" value="Good">
+                  </div>
+                </form>
+              <label for="diedComms">Died/Lost Comms</label>
+                  <input name="diedComms" class="diedComms" type="checkbox">
+              <label for="tipOver">Tipped Over</label>
+                  <input name="tipOver" class="tipOver" type="checkbox">
+              <label for="redYellowCard">Yellow/Red Cards</label>
+                  <input name="redYellowCard" class="redYellowCard" type="checkbox">
+              <p class="numStepTitle">Links Scored</p>
+                  <div class="numStep" id="numStep">
+                  <span class="numStepMinusLinks" id="numStepMinus">&minus;</span>
+                  <span class="numStepNumLinks" id="numStepNum">00</span>
+                  <span class="numStepPlusLinks" id="numStepPlus">+</span>
+                  </div>
+                  <div id="comments">
+              <a><label for="comments">Comments</label></a>
+                  <input class="comments" id="comments" name="comments" type="text"
+                    placeholder="Comment anything that you may think is important!">
+                </div>
       <button class="generate-btn" id="generate-btn">Generate</button>
       <div class="qr-code">
         <img class="qr-image">
@@ -203,270 +221,6 @@
       <button id="resetBTN" onclick="reset()">Reset</button>
     </div>
   </div>
-
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins';
-      scroll-behavior: smooth;
-      transition: all 1s ease-in-out;
-      user-select: none;
-    }
-
-    body {
-      width: 100%;
-      height: 100%;
-      background-color: #3d3c3c;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #noShowToggle {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mainTitle {
-      margin: 5rem 0rem;
-    }
-
-    .mainTitleText {
-      display: flex;
-      color: white;
-      font-size: 50px;
-      font-family: sans-serif;
-      background-color: #e3a112;
-      padding: 1rem 5rem;
-      border-radius: 5px;
-    }
-
-    .container {
-      background-color: #242323;
-      color: white;
-      width: 400px;
-      border-radius: 7px;
-      padding: 20px;
-      transition: .1s;
-      margin-bottom: 5rem;
-    }
-
-    .container p,
-    label,
-    input {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-    }
-
-    .qr-code {
-      padding: 25px 0;
-      margin-top: 10px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: .5s;
-    }
-
-    .container.active {
-      margin-bottom: 5rem;
-    }
-
-    .container.active .qr-code {
-      opacity: 1;
-      display: flex;
-      flex-direction: column;
-      pointer-events: auto;
-    }
-
-    #resetBTN {
-      font-size: 2rem;
-      font-family: sans-serif;
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 10px;
-      align-items: center;
-      justify-content: center;
-      margin-top: 3rem;
-      cursor: pointer;
-    }
-
-    .header p {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .preMatchTitle {
-      display: flex;
-      justify-content: center;
-      font-size: 2rem;
-      background-color: red;
-      padding: 20px;
-      border-radius: 7px;
-      margin: 2rem 0;
-    }
-
-    .autonomousTitle {
-      display: flex;
-      justify-content: center;
-      font-size: 2rem;
-      background-color: red;
-      padding: 20px;
-      border-radius: 7px;
-      margin: 2rem 0;
-    }
-
-    .teleOpTitle {
-      display: flex;
-      justify-content: center;
-      font-size: 2rem;
-      background-color: #57bf32;
-      padding: 20px;
-      border-radius: 7px;
-      margin: 2rem 0rem 1rem 0rem;
-    }
-
-    .postMatchTitle {
-      display: flex;
-      justify-content: center;
-      font-size: 2rem;
-      background-color: #e3a112;
-      padding: 20px;
-      border-radius: 7px;
-      margin: 2rem 0;
-    }
-
-    input,
-    button {
-      width: 100%;
-      height: 50px;
-      outline: none;
-      border-radius: 5px;
-    }
-
-    .numStepTitle {
-      margin-top: 0.5rem;
-    }
-
-    #numStep {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: black;
-      margin: 0.5rem 0rem;
-    }
-
-    #numStepMinus {
-      background-color: white;
-      margin: 0rem 1rem;
-      padding: 3px 12px;
-      border-radius: 7px;
-      font-size: 2.7rem;
-      cursor: pointer;
-
-    }
-
-    #numStepNum {
-      background-color: white;
-      margin: 0rem 1rem;
-      font-size: 2rem;
-      font-family: sans-serif;
-      border-radius: 7px;
-      padding: 10px;
-    }
-
-    #numStepPlus {
-      background-color: white;
-      margin: 0rem 1rem;
-      padding: 0px 10px;
-      border-radius: 7px;
-      font-size: 3rem;
-      cursor: pointer;
-    }
-
-    .conePickUpLabel {
-      margin-top: 1rem;
-    }
-
-    .radio {
-      display: flex;
-      flex-direction: column;
-      background-color: black;
-      border-radius: 7px;
-      padding: 10px;
-      margin: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .radioTitle {
-      font-size: 1.2rem;
-      margin: 1rem 0;
-    }
-
-    .radioLabel {
-      display: flex;
-      margin-bottom: 0.8rem;
-    }
-
-    .radio input[type=radio],
-    input[type=checkbox] {
-      height: 2rem;
-      display: flex;
-      cursor: pointer;
-    }
-
-    .radioInput,
-    input,
-    label {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #comments label {
-      margin-top: 1rem;
-    }
-
-    .generate-btn {
-      border: none;
-      background-color: #57bf32;
-      font-size: 2rem;
-      font-family: sans-serif;
-      color: #fff;
-      cursor: pointer;
-      margin: 2rem 0rem 0rem 0rem;
-    }
-
-    input {
-      border: 1px solid #8b8a8a;
-      padding-left: 10px;
-      margin-bottom: 15px;
-      font-size: 15px;
-    }
-
-    #fullBTN {
-      background-color: #57bf32;
-      color: white;
-      font-size: 3rem;
-      font-family: sans-serif;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      border-radius: 5px;
-      top: 2%;
-      left: 1%;
-      position: fixed;
-      padding: 0px 10px;
-      cursor: pointer;
-    }
-  </style>
 
   <!-- QR-Code Library -->
   <script src="./qrcode.min.js" defer></script>
@@ -496,22 +250,22 @@
       var comments = document.querySelector(".comments");
       var qrImg = document.querySelector(".qr-image");
 
-    //fixes visual bug of when page is reloaded
-    // function resetNum() {
-    //     alNumnum.innerText = "00";
-    //     NumnumEPPU.innerText = "00";
-    //     NumnumAHC.innerText = "00";
-    //     NumnumAHCU.innerText = "00";
-    //     NumnumAMC.innerText = "00";
-    //     NumnumAMCU.innerText = "00";
-    //     NumnumAH.innerText = "00";
-    //     NumnumTHC.innerText = "00";
-    //     NumnumTHCU.innerText = "00";
-    //     NumnumTMC.innerText = "00";
-    //     NumnumTMCU.innerText = "00";
-    //     NumnumTH.innerText = "00";
-    //     NumnumLinks.innerText = "00";
-    // }
+    /* fixes visual bug of when page is reloaded
+       function resetNum() {
+           alNumnum.innerText = "00";
+           NumnumEPPU.innerText = "00";
+           NumnumAHC.innerText = "00";
+           NumnumAHCU.innerText = "00";
+           NumnumAMC.innerText = "00";
+           NumnumAMCU.innerText = "00";
+           NumnumAH.innerText = "00";
+           NumnumTHC.innerText = "00";
+           NumnumTHCU.innerText = "00";
+           NumnumTMC.innerText = "00";
+           NumnumTMCU.innerText = "00";
+           NumnumTH.innerText = "00";
+           NumnumLinks.innerText = "00";
+     } */
 
     generateBtn.onclick = function() {
         if (scouterName.value.length > 0) {
@@ -667,6 +421,7 @@
         }
     });
     //Extra Pieces Picked Up Counter End
+
     //Autonomous High Cone Counter Start
     const numplusAHC = document.querySelector(".numStepPlusAHC"),
         NumminusAHC = document.querySelector(".numStepMinusAHC"),
@@ -686,6 +441,7 @@
         }
     });
     //Autonomous High Cone Counter End
+
     //Autonomous High Cube Counter Start
     const numplusAHCU = document.querySelector(".numStepPlusAHCU"),
         NumminusAHCU = document.querySelector(".numStepMinusAHCU"),
@@ -705,6 +461,7 @@
         }
     });
     //Autonomous High Cube Counter End
+
     //Autonomous Mid Cone Counter Start
     const numplusAMC = document.querySelector(".numStepPlusAMC"),
         NumminusAMC = document.querySelector(".numStepMinusAMC"),
@@ -724,6 +481,7 @@
         }
     });
     //Autonomous Mid Cone Counter End
+
     //Autonomous Mid Cube Counter Start
     const numplusAMCU = document.querySelector(".numStepPlusAMCU"),
         NumminusAMCU = document.querySelector(".numStepMinusAMCU"),
@@ -743,6 +501,7 @@
         }
     });
     //Autonomous Mid Cube Counter End
+
     //Autonomous Hybrid Counter Start
     const numplusAH = document.querySelector(".numStepPlusAH"),
         NumminusAH = document.querySelector(".numStepMinusAH"),
@@ -762,6 +521,7 @@
         }
     });
     //Autonomous Hybrid Counter End
+
     //Tele-OP High Cone Counter Start
     const numplusTHC = document.querySelector(".numStepPlusTHC"),
         NumminusTHC = document.querySelector(".numStepMinusTHC"),
@@ -781,6 +541,7 @@
         }
     });
     //Tele-OP High Cone Counter End
+
     //Tele-OP High Cube Counter Start
     const numplusTHCU = document.querySelector(".numStepPlusTHCU"),
         NumminusTHCU = document.querySelector(".numStepMinusTHCU"),
@@ -800,6 +561,7 @@
         }
     });
     //Tele-OP High Cube Counter End
+
     //Tele-OP Mid Cone Counter Start
     const numplusTMC = document.querySelector(".numStepPlusTMC"),
         NumminusTMC = document.querySelector(".numStepMinusTMC"),
@@ -819,6 +581,7 @@
         }
     });
     //Tele-OP Mid Cone Counter End
+
     //Tele-OP Mid Cube Counter Start
     const numplusTMCU = document.querySelector(".numStepPlusTMCU"),
         NumminusTMCU = document.querySelector(".numStepMinusTMCU"),
@@ -838,6 +601,7 @@
         }
     });
     //Tele-OP Mid Cube Counter End
+
     //Tele-OP Hybrid Counter Start
     const numplusTH = document.querySelector(".numStepPlusTH"),
         NumminusTH = document.querySelector(".numStepMinusTH"),
@@ -858,6 +622,7 @@
     });
 
     //Tele-OP Hybrid Counter End
+
     //Tele-OP Hybrid Counter Start
     const numplusLinks = document.querySelector(".numStepPlusLinks"),
         NumminusLinks = document.querySelector(".numStepMinusLinks"),
@@ -894,18 +659,18 @@
             document.exitFullscreen();
         }
     })
-    // Fullscreen all the time?
+    /* Fullscreen all the time? dissabled for css editing
     var webfulscrn = document.getElementById("fullscrn");
     function openFullscreen() 
     {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
+      } else if (elem.webkitRequestFullscreen) { // Safari 
         elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE11 */
+      } else if (elem.msRequestFullscreen) { // IE11 
         elem.msRequestFullscreen();
-      }
-    }
+      } 
+    } */
 </script>
 </body>
 
