@@ -30,21 +30,6 @@
       <label for="noShow">No Show</label>
       <input type="checkbox" id="noShow" class="noShow">
       <div id="noShowToggle">
-        <div class="radio">
-          <p class="radioTitle">Alliance Color</p>
-          <div class="radioInput">
-            <label for="aColorRed" class="radioLabel">Red</label>
-            <input type="radio" id="aColorRed" name="aColor" value="Red" />
-            <label for="aColorBlue" class="radioLabel">Blue</label>
-            <input type="radio" id="aColorBlue" name="aColor" value="Blue"/>
-          </div>
-        </div>
-        <p class="numStepTitle">Alliance #</p>
-        <div class="numStep" id="numStep">
-          <span class="numStepMinusAlNum" id="numStepMinus">&minus;</span>
-          <span class="numStepNumAlNum" id="numStepNum">0</span>
-          <span class="numStepPlusAlNum" id="numStepPlus">+</span>
-        </div>
         <form class="radio" id="startPos">
           <p class="radioTitle">Start Position</p>
           <div class="radioInput">
@@ -485,29 +470,29 @@
   <script src="./qrcode.min.js" defer></script>
   <!-- App Function -->
   <script defer>
-    //Create variables for each input
-    var container = document.querySelector(".container");
-    var generateBtn = document.querySelector(".generate-btn");
-    var scouterName = document.querySelector(".scouterName");
-    var teamNum = document.querySelector(".teamNum");
-    var matchNum = document.querySelector(".matchNum");
-    var noShow = document.querySelector(".noShow");
-    let aColor = document.querySelectorAll('input[name="aColor"]');
-    let startPos = document.querySelectorAll('input[name="startPos"]');
-    let preLoad = document.querySelectorAll('input[name="preLoad"]');
-    let autoChargeStation = document.querySelectorAll('input[name="autoChargeStation"]');
-    var preLoadScored = document.querySelector(".preLoadScored");
-    var leftCommunity = document.querySelector(".leftCommunity");
-    var conePickup = document.querySelector(".conePickUp");
-    var cubePickup = document.querySelector(".cubePickUp");
-    let endLoc = document.querySelectorAll('input[name="endLoc"]');
-    let driverSkill = document.querySelectorAll('input[name="driverSkill"]');
-    let defense = document.querySelectorAll('input[name="defense"]');
-    var diedComms = document.querySelector(".diedComms");
-    var tipOver = document.querySelector(".tipOver");
-    var redYellowCard = document.querySelector(".redYellowCard");
-    var comments = document.querySelector(".comments");
-    var qrImg = document.querySelector(".qr-image");
+      /*Create variables for each input*/
+      var container = document.querySelector(".container");
+      var generateBtn = document.querySelector(".generate-btn");
+      var scouterName = document.querySelector(".scouterName");
+      var teamNum = document.querySelector(".teamNum");
+      var matchNum = document.querySelector(".matchNum");
+      var noShow = document.querySelector(".noShow");
+      let aColor = document.querySelectorAll('input[name="aColor"]');
+      let startPos = document.querySelectorAll('input[name="startPos"]');
+      let preLoad = document.querySelectorAll('input[name="preLoad"]');
+      let autoChargeStation = document.querySelectorAll('input[name="autoChargeStation"]');
+      var preLoadScored = document.querySelector(".preLoadScored");
+      var leftCommunity = document.querySelector(".leftCommunity");
+      var conePickup = document.querySelector(".conePickUp");
+      var cubePickup = document.querySelector(".cubePickUp");
+      let endLoc = document.querySelectorAll('input[name="endLoc"]');
+      let driverSkill = document.querySelectorAll('input[name="driverSkill"]');
+      let defense = document.querySelectorAll('input[name="defense"]');
+      var diedComms = document.querySelector(".diedComms");
+      var tipOver = document.querySelector(".tipOver");
+      var redYellowCard = document.querySelector(".redYellowCard");
+      var comments = document.querySelector(".comments");
+      var qrImg = document.querySelector(".qr-image");
 
     //fixes visual bug of when page is reloaded
     // function resetNum() {
@@ -554,7 +539,7 @@
 
           // Creates a variable to hold all the data collected
           generateBtn.innerText = "Generating QR Code...";
-          let data = scouterName.value + "," + teamNum.value + "," + matchNum.value + "," + noShow.checked + "," + aColor + "," + alNum + "," + startPos + "," + preLoad + "," + preLoadScored.checked + "," + leftCommunity.checked + "," + NumEPPU + "," + NumAHC + "," + NumAHCU + "," + NumAMC + "," + NumAMCU + "," + NumAH + "," + autoChargeStation + "," + NumTHC + "," + NumTHCU + "," + NumTMC + "," + NumTMCU + "," + NumTH + "," + conePickup.checked + "," + cubePickup.checked + "," + endLoc + "," + driverSkill + "," + defense + "," + diedComms.checked + "," + tipOver.checked + "," + redYellowCard.checked + "," + NumLinks + "," + comments.value;
+          let data = scouterName.value + "," + teamNum.value + "," + matchNum.value + "," + noShow.checked + "," + aColor +"," + startPos + "," + preLoad + "," + preLoadScored.checked + "," + leftCommunity.checked + "," + NumEPPU + "," + NumAHC + "," + NumAHCU + "," + NumAMC + "," + NumAMCU + "," + NumAH + "," + autoChargeStation + "," + NumTHC + "," + NumTHCU + "," + NumTMC + "," + NumTMCU + "," + NumTH + "," + conePickup.checked + "," + cubePickup.checked + "," + endLoc + "," + driverSkill + "," + defense + "," + diedComms.checked + "," + tipOver.checked + "," + redYellowCard.checked + "," + NumLinks + "," + comments.value;
 
           // fixes bug in QR Library where the code may not work right between these number of characters
           if (data.length > 192 && data.length < 220) {
@@ -588,11 +573,6 @@
 
       }
       
-    // Alliance Color Radio
-    let findSelectedaColor = () => {
-        aColor = document.querySelector("input[name='aColor']:checked").value;
-    }
-
     aColor.forEach(aColor => {
         aColor.addEventListener("change", findSelectedaColor);
     });
@@ -662,30 +642,6 @@
         }
     });
 
-    // Alliance Number Counter
-    const alNumplus = document.querySelector(".numStepPlusAlNum"),
-        alNumminus = document.querySelector(".numStepMinusAlNum"),
-        alNumnum = document.querySelector(".numStepNumAlNum");
-    let alNum = 0;
-    alNumplus.addEventListener("click", () => {
-        alNum++;
-        alNum = (alNum < 10) ? "" + alNum : alNum;
-        alNumnum.innerText = alNum;
-        if (alNum >= 3) {
-            alNum = 3;
-            alNumnum.innerText = "" + alNum;
-        }
-    });
-
-    alNumminus.addEventListener("click", () => {
-        if (alNum > 0) {
-            alNum--;
-            alNum = (alNum < 10) ? "" + alNum : alNum;
-            alNumnum.innerText = alNum;
-        }
-    });
-
-    // Alliance Number Counter End
     // Extra Pieces Picked Up Counter Start
     const NumplusEPPU = document.querySelector(".numStepPlusEPPU"),
         NumminusEPPU = document.querySelector(".numStepMinusEPPU"),
