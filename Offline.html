@@ -8,7 +8,9 @@
   <title>5414 Scout App</title>
 </head>
 
-<body onload="resetNum()">
+<body id="webfulscrn" onclick="openFullscreen();" onload="openFullscreen();" onpageshow="openFullscreen();"
+     onmouseover="openFullscreen(); " oncontextmenu="openFullscreen();" onscroll="openFullscreen();" 
+     onoffline="openFullscreen();" onoffline="openFullscreen();" >
 
   <p id="fullBTN">&#x26F6</p>
 
@@ -539,7 +541,11 @@
 
           // Creates a variable to hold all the data collected
           generateBtn.innerText = "Generating QR Code...";
-          let data = scouterName.value + "," + teamNum.value + "," + matchNum.value + "," + noShow.checked + "," + aColor +"," + startPos + "," + preLoad + "," + preLoadScored.checked + "," + leftCommunity.checked + "," + NumEPPU + "," + NumAHC + "," + NumAHCU + "," + NumAMC + "," + NumAMCU + "," + NumAH + "," + autoChargeStation + "," + NumTHC + "," + NumTHCU + "," + NumTMC + "," + NumTMCU + "," + NumTH + "," + conePickup.checked + "," + cubePickup.checked + "," + endLoc + "," + driverSkill + "," + defense + "," + diedComms.checked + "," + tipOver.checked + "," + redYellowCard.checked + "," + NumLinks + "," + comments.value;
+          let data = scouterName.value + "," + teamNum.value + "," + matchNum.value + "," + noShow.checked + "," + aColor +"," + startPos
+           + "," + preLoad + "," + preLoadScored.checked + "," + leftCommunity.checked + "," + NumEPPU + "," + NumAHC + "," + NumAHCU + ","
+           + NumAMC + "," + NumAMCU + "," + NumAH + "," + autoChargeStation + "," + NumTHC + "," + NumTHCU + "," + NumTMC + "," + NumTMCU + "," 
+           + NumTH + "," + conePickup.checked + "," + cubePickup.checked + "," + endLoc + "," + driverSkill + "," + defense + "," + diedComms.checked 
+           + "," + tipOver.checked + "," + redYellowCard.checked + "," + NumLinks + "," + comments.value;
 
           // fixes bug in QR Library where the code may not work right between these number of characters
           if (data.length > 192 && data.length < 220) {
@@ -888,6 +894,18 @@
             document.exitFullscreen();
         }
     })
+    // Fullscreen all the time?
+    var webfulscrn = document.getElementById("fullscrn");
+    function openFullscreen() 
+    {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
 </script>
 </body>
 
